@@ -1,5 +1,5 @@
 {
-  "name": "electron-react-boilerplate",
+  "name": "electron-react-test",
   "productName": "ElectronReact",
   "version": "0.17.1",
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
@@ -9,7 +9,7 @@
     "build-e2e": "cross-env E2E_BUILD=true yarn build",
     "build-main": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.main.prod.babel.js --colors",
     "build-renderer": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.renderer.prod.babel.js --colors",
-    "dev": "cross-env START_HOT=1 node -r @babel/register ./internals/scripts/CheckPortInUse.js && cross-env START_HOT=1 yarn start-renderer-dev",
+    "dev": "cross-env NODE_ENV=production START_HOT=1 node -r @babel/register ./internals/scripts/CheckPortInUse.js && cross-env START_HOT=1 yarn start-renderer-dev",
     "flow": "flow",
     "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || true",
     "lint": "cross-env NODE_ENV=development eslint --cache --format=pretty .",
@@ -109,7 +109,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/helloaiway/electron-react-test.git"
   },
   "author": {
     "name": "Electron React Boilerplte Maintainers",
@@ -143,7 +143,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/helloaiway/electron-react-test#readme",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {

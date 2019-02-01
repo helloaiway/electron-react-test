@@ -16,7 +16,17 @@ import log from 'electron-log';
 import MenuBuilder from './menu';
 
 function sendStatusToWindow(msg) {
-  return msg;
+  const dialogOpts = {
+    type: 'info',
+    buttons: ['OK'],
+    title: 'Application Update',
+    message: process.platform === 'win32' ? 'Win' : 'Mac',
+    detail: msg
+  };
+
+  dialog.showMessageBox(dialogOpts, response => {
+    console.log(response);
+  });
 }
 
 export default class AppUpdater {
@@ -61,9 +71,9 @@ export default class AppUpdater {
       });
     });
 
-    log.transports.file.level = 'info';
+    log.transports.file.level = 'debug';
     autoUpdater.logger = log;
-    const server = 'https://your-deployment-url.com';
+    const server = 'https://hazel-j28ens32r.now.sh';
     const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
     autoUpdater.setFeedURL(feed);
     autoUpdater.checkForUpdatesAndNotify();
