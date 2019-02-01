@@ -64,7 +64,7 @@ export default class Counter extends Component<Props> {
             data-tclass="btn"
             type="button"
           >
-            async2
+            async18
           </button>
         </div>
       </div>
